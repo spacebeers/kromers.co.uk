@@ -1,0 +1,40 @@
+.site-footer {
+    background-color: @palette-mid;
+    color: @palette-lightest;
+    font-weight: @weight-light;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-top: 200px;
+    position: relative;
+
+    &::before {
+        content: "";
+        background: url(./assets/background.png);
+        background-repeat: repeat-x;
+        width: 100%;
+        height: 200px;
+        display: block;
+        background-size: contain;
+        background-position: bottom;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: translateY(-100%);
+    }
+
+    .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        @media(min-width: @screen-sm-min) {
+            display: flex;
+        }
+    }
+
+    .image {
+        @media(min-width: @screen-sm-min) {
+            padding-right: 20px;
+        }
+    }
+}

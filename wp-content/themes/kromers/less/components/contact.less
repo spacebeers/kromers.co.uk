@@ -1,0 +1,28 @@
+.wpforms-field {
+    @media (min-width: @screen-sm-min) {
+        display: flex;
+    }
+
+    label {
+        white-space: nowrap;
+        @media (min-width: @screen-sm-min) {
+            flex: 0 0 21%;
+        }
+
+        span {
+            display: none;
+        }
+    }
+}
+
+.wpforms-submit {
+    width: 100% !important;
+    text-align: right !important;
+    background: @primary !important;
+    color: @palette-light !important;
+    border: none !important;
+}
+
+div.wpforms-container-full .wpforms-form textarea.wpforms-field-large {
+    height: 150px !important;
+}

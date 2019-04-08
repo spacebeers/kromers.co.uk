@@ -1,0 +1,52 @@
+.testimonial {
+    margin-bottom: 20px;
+    flex: 0 0 100%;
+    padding: 0;
+    @media (min-width: @screen-sm-min) {
+        flex: 0 0 32%;
+        padding: 1%;
+    }
+
+    &:last-child {
+        margin: 0;
+    }
+
+    .image {
+        width: 100%;
+        padding-top: 62%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+
+    blockquote {
+        margin: 0;
+        padding: 0;
+        border: none;
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+
+        &::before, &::after {
+            content: '"';
+        }
+    }
+
+    figcaption {
+        font-weight: 600;
+    }
+}
+
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home_page {
+    .testimonial {
+        padding: 0;
+
+        .banner-text {
+            border-bottom: 10px solid @palette-mid !important;
+        }
+    }
+}

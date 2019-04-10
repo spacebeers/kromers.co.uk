@@ -1,6 +1,9 @@
     </section>
 
     <footer class="site-footer">
+        <div class="footer-contents">
+            Footer?
+        </div>
         <div class="container">
             <div class="image">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/logo-white.png" alt="Image of the Kromers logo" />

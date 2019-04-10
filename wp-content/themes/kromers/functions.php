@@ -180,5 +180,4 @@
             'total' => $wp_query->max_num_pages
         ));
     }
-
 ?>

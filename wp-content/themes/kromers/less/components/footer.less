@@ -1,3 +1,14 @@
+.page-template-page-services, .page-template-contact-page, .hide-contact-form {
+    .footer-contents {
+        display: none;
+    }
+
+    .site-footer::before {
+        top: 0;
+    }
+}
+
+
 .site-footer {
     background-color: @palette-mid;
     color: @palette-lightest;
@@ -6,6 +17,7 @@
     line-height: 1.7;
     margin-top: 200px;
     position: relative;
+    z-index: 1;
 
     &::before {
         content: "";
@@ -17,11 +29,35 @@
         background-size: contain;
         background-position: bottom;
         position: absolute;
-        top: 0;
+        top: 400px;
+        z-index: 1;
         left: 0;
         right: 0;
         transform: translateY(-100%);
     }
+
+    .footer-contents {
+        background: @primary;
+        position: relative;
+        min-height: 400px;
+
+        &::before {
+            content: "";
+            margin: 0;
+            height: 110px;
+            background: @primary;
+            border-top: 20px solid @secondary;
+            display: block;
+            width: 110vw;
+            top: -65px;
+            position: absolute;
+            transform: translateX(-5vw) rotate(-5deg);
+            -ms-transform: translateX(-5vw) rotate(-5deg);
+            transform: translateX(-5vw) rotate(-5deg);
+        }
+    }
+
+
 
     .container {
         padding-top: 20px;

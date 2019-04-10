@@ -1,6 +1,6 @@
 <?php
     /**
-    * Template Name: Testimonials Page
+    * Template Name: About us Page
     */
     get_header(); ?>
 
@@ -9,7 +9,7 @@
         while ( have_posts() ) : the_post();
 
             // Include the page content template.
-            get_template_part( 'template-parts/content', 'testimonials' );
+            get_template_part( 'template-parts/content', 'about-us' );
 
         // End the loop.
         endwhile;

@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class("page"); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class("page hide-footer"); ?>>
     <div class="container">
         <section class="contents">
             <h1><?php the_title(); ?></h1>

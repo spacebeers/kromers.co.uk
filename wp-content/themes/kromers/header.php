@@ -1,8 +1,15 @@
 <?php
     $page_tile = get_the_title($post->ID);
+    $page_show_contact_form = get_the_title($post->ID);
+    $page_class = "";
 
     if (get_field('meta_page_title')):
         $page_tile = get_field('meta_page_title');
+    endif;
+
+    if (get_field('show_contact_form')):
+        $page_show_contact_form = get_field('show_contact_form');
+        $page_class = "hide-contact-form";
     endif;
 ?>
 
@@ -17,7 +24,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class($page_class); ?>>
     <header class="site-header" id="header">
         <div class="container">
             <a class="logo" href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>

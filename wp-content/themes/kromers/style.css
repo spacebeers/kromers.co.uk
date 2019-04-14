@@ -254,7 +254,7 @@ ol {
   margin-left: 10px;
 }
 .banner {
-  color: #EDEDED;
+  color: #ffffff;
   background: #5A8339;
   display: -webkit-box;
   display: -webkit-flex;
@@ -286,7 +286,7 @@ ol {
 }
 @media (min-width: 768px) {
   .banner > div + div {
-    border-right: 5px solid #EDEDED;
+    border-right: 5px solid #ffffff;
   }
 }
 .banner .banner-image {
@@ -295,7 +295,7 @@ ol {
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
   height: 60vw;
-  border-bottom: 5px solid #EDEDED;
+  border-bottom: 5px solid #ffffff;
 }
 @media (min-width: 768px) {
   .banner .banner-image {
@@ -368,7 +368,7 @@ ol {
 }
 .banner h1,
 .banner a {
-  color: #EDEDED;
+  color: #ffffff;
 }
 .banner h1 {
   font-size: 2.4rem;
@@ -379,7 +379,7 @@ ol {
   }
 }
 .home-banner {
-  border-bottom: 5px solid #EDEDED;
+  border-bottom: 5px solid #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -406,7 +406,7 @@ ol {
 }
 @media (min-width: 768px) {
   .home-banner > div + div {
-    border-left: 5px solid #EDEDED;
+    border-left: 5px solid #ffffff;
   }
 }
 .home-banner.blocks,
@@ -414,7 +414,7 @@ ol {
   background: #575756;
 }
 .home-banner .banner-wide {
-  border-bottom: 5px solid #EDEDED;
+  border-bottom: 5px solid #ffffff;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 100%;
       -ms-flex: 0 0 100%;
@@ -438,7 +438,7 @@ ol {
 }
 .home-banner .banner-small {
   height: 60vw;
-  border-bottom: 5px solid #EDEDED;
+  border-bottom: 5px solid #ffffff;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 100%;
       -ms-flex: 0 0 100%;
@@ -485,7 +485,7 @@ ol {
   }
 }
 .page-template-contact-page h2 {
-  color: #EDEDED;
+  color: #ffffff;
 }
 .page-template-home-page,
 .page-template-about-page {
@@ -584,7 +584,7 @@ ol {
 }
 .page-template-home-page .staff-section,
 .page-template-about-page .staff-section {
-  background-color: #EDEDED;
+  background-color: #ffffff;
   color: #5A8339;
   position: relative;
   z-index: 2;
@@ -697,7 +697,7 @@ ol {
   content: "";
   margin: 0;
   height: 110px;
-  background: #EDEDED;
+  background: #ffffff;
   border-bottom: 20px solid #DBBE2C;
   display: block;
   width: 110vw;
@@ -717,7 +717,7 @@ ol {
       -ms-transform: translateX(-5vw) rotate(-5deg);
           transform: translateX(-5vw) rotate(-5deg);
   border-bottom: 20px solid #DBBE2C;
-  background-color: #EDEDED;
+  background-color: #ffffff;
   color: #5A8339;
   position: relative;
   z-index: 1;
@@ -769,7 +769,7 @@ ol {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #EDEDED;
+  background-color: #ffffff;
 }
 .page-template-home-page .secondary_contents .inner img,
 .page-template-about-page .secondary_contents .inner img {
@@ -791,7 +791,7 @@ ol {
     margin-bottom: 75px;
     margin-right: auto;
     margin-left: auto;
-    background-color: #EDEDED;
+    background-color: #ffffff;
   }
 }
 @media (min-width: 768px) {
@@ -916,7 +916,7 @@ ol {
           justify-content: center;
 }
 .project-list .project {
-  color: #EDEDED;
+  color: #ffffff;
   position: relative;
   width: 33.33%;
 }

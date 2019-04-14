@@ -12,7 +12,10 @@
     }
 
     .contents {
-        width: 60vw;
+        width: 80vw;
+        @media (min-width: @screen-sm-min) {
+            width: 60vw;
+        }
         margin: 50px auto;
         text-align: center;
     }
@@ -33,7 +36,10 @@
     }
 
     .contents {
-        width: 60vw;
+        width: 80vw;
+        @media (min-width: @screen-sm-min) {
+            width: 60vw;
+        }
         margin: 50px auto;
         text-align: center;
     }
@@ -198,7 +204,12 @@
             transform: rotate(5deg);
             display: flex;
             justify-content: space-between;
+            flex-direction: column;
+            @media (min-width: @screen-sm-min) {
+                flex-direction: row;
+            }
             margin: -65px;
+
 
             & > div {
                 flex: 0 0 50%;
@@ -207,6 +218,7 @@
             .content {
                 display: flex;
                 align-items: center;
+                background-color: @palette-light;
             }
 
             img {
@@ -216,9 +228,19 @@
             }
 
             .content-inner {
+                @media (max-width: @screen-xs-max) {
+                    width: 60%;
+                    padding: 20px;
+                    margin-bottom: 75px;
+                    margin-right: auto;
+                    margin-left: auto;
+                    background-color: @palette-light;
+                }
                 width: 75%;
-                padding: 20px;
                 margin-top: 60px;
+                @media (min-width: @screen-sm-min) {
+                    padding-left: 20px;
+                }
             }
         }
     }
@@ -231,11 +253,13 @@
     }
 
     .contents {
-        width: 60vw;
+        width: 80vw;
+        @media (min-width: @screen-sm-min) {
+            width: 60vw;
+        }
+
         margin: 100px auto;
     }
-
-
 }
 
 .page-template-page-services {
@@ -244,7 +268,10 @@
     }
 
     .contents {
-        width: 60vw;
+        width: 80vw;
+        @media (min-width: @screen-sm-min) {
+            width: 60vw;
+        }
         margin: 100px auto;
     }
 }
@@ -273,14 +300,26 @@
 .contact-page {
     display: flex;
     justify-content: space-between;
+    flex-direction: column-reverse;
+    @media (min-width: @screen-sm-min) {
+        flex-direction: row;
+    }
 
     .contact-details {
-        flex: 0 0 25%;
-        max-width: 25%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        @media (min-width: @screen-sm-min) {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
     }
 
     .contact-form {
-        flex: 0 0 70%;
-        max-width: 70%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        @media (min-width: @screen-sm-min) {
+            flex: 0 0 70%;
+            max-width: 70%;
+        }
     }
 }

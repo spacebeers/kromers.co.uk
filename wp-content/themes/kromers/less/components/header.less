@@ -1,12 +1,18 @@
 .site-header {
-    background: transparent;
-    padding-top: 25px;
+    background: @palette-lightest;
+    padding: 15px 0;
+    z-index: 2;
+    @media (min-width: @screen-sm-min) {
+        background: transparent;
+        padding: 25px 0 0 0;
+        z-index: 1;
+    }
     position: relative;
-    z-index: 1;
 
     &::before {
-        //content: url(./assets/slash.svg);
-        content: "";
+        @media (min-width: @screen-sm-min) {
+            content: "";
+        }
         background-image: url(./assets/slash.svg);
         position: absolute;
         top: 0;
@@ -19,6 +25,89 @@
         z-index: -1;
     }
 
+    &.open {
+        nav {
+            display: block;
+            opacity: 1;
+        }
+    }
+
+    #nav {
+        display: block;
+        @media (min-width: @screen-sm-min) {
+            display: none;
+        }
+    }
+
+    #close {
+        display: none;
+    }
+
+    nav {
+        @media (max-width: @screen-xs-max) {
+            overflow: auto;
+            background: fade(#111, 80%);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 3;
+            padding: 60px 30px;
+            display: none;
+            opacity: 0;
+            transition: opacity 3s linear;
+
+            ul {
+                a {
+                    font-size: 2.6rem;
+                }
+
+                li {
+                    margin: 10px 0;
+                }
+            }
+
+            #close {
+                display: block;
+                position: fixed;
+                top: 20px;
+                right: 16px;
+                z-index: 4;
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            @media (min-width: @screen-sm-min) {
+                display: flex;
+
+                li + li {
+                    margin-left: 20px;
+                }
+            }
+
+            a {
+                color: @palette-lightest;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    button {
+        background: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        color: @primary;
+        cursor: pointer;
+    }
+
     .container {
         display: flex;
         justify-content: space-between;
@@ -26,7 +115,10 @@
     }
 
     .logo {
-        flex: 0 0 250px;
+        flex: 0 0 125px;
+        @media (min-width: @screen-sm-min) {
+            flex: 0 0 250px;
+        }
 
         img {
             width: 100%;

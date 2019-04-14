@@ -29,7 +29,10 @@
         background-size: contain;
         background-position: bottom;
         position: absolute;
-        top: 400px;
+        top: 100px;
+        @media (min-width: @screen-sm-min) {
+            top: 400px;
+        }
         z-index: 1;
         left: 0;
         right: 0;
@@ -39,12 +42,15 @@
     .footer-contents {
         background: @primary;
         position: relative;
-        min-height: 400px;
+        min-height: 100px;
+        @media (min-width: @screen-sm-min) {
+            min-height: 400px;
+        }
 
         &::before {
             content: "";
             margin: 0;
-            height: 110px;
+            height: 130px;
             background: @primary;
             border-top: 20px solid @secondary;
             display: block;
@@ -62,14 +68,18 @@
     .container {
         padding-top: 20px;
         padding-bottom: 20px;
+        text-align: center;
 
         @media(min-width: @screen-sm-min) {
             display: flex;
+            text-align: left;
         }
     }
 
     .image {
+        display: none;
         @media(min-width: @screen-sm-min) {
+            display: block;
             padding-right: 20px;
         }
     }

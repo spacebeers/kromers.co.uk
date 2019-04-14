@@ -20,11 +20,11 @@
 
     add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
 
-    /*// Vendor scripts
+    // Vendor scripts
     function kromers_theme_name_scripts() {
-        wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.min.js', array ( 'jquery' ), 1.1, true);
+        wp_enqueue_script( 'app', get_template_directory_uri() . '/scripts/app.js', array ( 'jquery' ), 1.1, true);
     }
-    add_action( 'wp_enqueue_scripts', 'kromers_theme_name_scripts' );*/
+    add_action( 'wp_enqueue_scripts', 'kromers_theme_name_scripts' );
 
 	// Post support
 	add_theme_support( 'post-thumbnails' );

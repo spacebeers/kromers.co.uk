@@ -17,12 +17,19 @@
                         // vars
                         $image = get_sub_field('image');
                         $title = get_sub_field('title');
+                        $contents = get_sub_field('contents');
                         ?>
 
                         <div class="project">
                             <div class="project-content">
                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
                                 <h2><?php echo $title; ?></h2>
+
+                                <?php if ($contents): ?>
+                                    <div class="hover">
+                                        <?php echo $contents; ?>
+                                    </div>
+                                <?php endif;?>
                             </div>
                         </div>
 

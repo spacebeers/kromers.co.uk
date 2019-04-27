@@ -1,5 +1,6 @@
 html {
     font-size: 62.5%;
+    overflow-x: hidden;
 }
 
 body {
@@ -13,11 +14,30 @@ body {
     color: @body-text-color;
     font-family: @primary-font;
     font-size: 1.6rem;
-    font-weight: 300;
+    font-weight: 200;
     line-height: 2.4rem;
     overflow-x: hidden;
+    width: 100vw;
     margin: 0;
     padding: 0;
+
+    position: relative;
+
+    &::before {
+        @media (min-width: @screen-sm-min) {
+            content: "";
+        }
+        background-image: url(./assets/slash.svg);
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 42vw;
+        background-repeat: no-repeat;
+        height: 22vw;
+        background-size: contain;
+        z-index: -1;
+    }
 }
 
 .container {
@@ -25,4 +45,10 @@ body {
     max-width: 1024px;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+.content {
+    @media (min-width: @screen-sm-min) {
+        padding-top: 85px;
+    }
 }

@@ -23,6 +23,7 @@
     // Vendor scripts
     function kromers_theme_name_scripts() {
         wp_enqueue_script( 'app', get_template_directory_uri() . '/scripts/app.js', array ( 'jquery' ), 1.1, true);
+        //wp_enqueue_script( 'parallax', get_template_directory_uri() . '/vendor/parallax.min.js', array ( 'jquery' ), 1.1, true);
     }
     add_action( 'wp_enqueue_scripts', 'kromers_theme_name_scripts' );
 

@@ -17,7 +17,7 @@
         </section>
     </div>
     <div class="strip-image">
-        <img src="<?php echo $strip_image['url']; ?>" alt="<?php echo $strip_image['alt'] ?>" />
+        <div class="parallaxed" style="background-image: url(<?php echo $strip_image['url']; ?>);"></div>
     </div>
 
     <?php

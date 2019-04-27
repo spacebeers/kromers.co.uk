@@ -1,6 +1,7 @@
 <?php
     $hero_image = get_field('hero_image');
     $strip_image = get_field('strip_image');
+    $contents = get_field('content');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("page"); ?>>
@@ -8,13 +9,17 @@
         <section class="contents">
             <h1><?php the_title(); ?></h1>
 
-            <?php the_content(); ?>
+            <div class="columns">
+                <?php the_content(); ?>
+                <?php //echo $contents['column_one']; ?>
+                <?php //echo $contents['column_two']; ?>
+            </div>
 
             <?php edit_post_link( __( 'Edit', 'kromers' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer><!-- .entry-footer -->' ); ?>
         </section>
     </div>
-    <div class="strip-image">
-        <img src="<?php echo $strip_image['url']; ?>" alt="<?php echo $strip_image['alt'] ?>" />
+     <div class="strip-image">
+        <div class="parallaxed" style="background-image: url(<?php echo $strip_image['url']; ?>);"></div>
     </div>
 
     <?php if( have_rows('staff') ): ?>

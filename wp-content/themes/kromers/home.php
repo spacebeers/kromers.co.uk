@@ -1,47 +1,50 @@
+<?php
+    $page_for_posts_id = get_option('page_for_posts');
+    $hero_image = get_field('hero_image', $page_for_posts_id);
+    $ghost_image = get_field('ghost_image', $page_for_posts_id);
+    $tax = "category";
+?>
+
 <?php get_header(); ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class("page"); ?>>
-        <?php
-            $page_link = get_theme_mod('kromers_pages_contact_link');
-            $show_banner = get_field('show_banner', get_option('page_for_posts'));
-        ?>
-
-        <?php if ($show_banner): ?>
-            <div class="banner">
-                <div class="banner-text">
-                    <div class="callback">
-                        <?php if (get_field('icon', get_option('page_for_posts'))): ?>
-                            <img class="flair" src="<?php bloginfo('template_directory'); ?>/assets/<?php the_field('icon', get_option('page_for_posts')); ?>" alt="Flair icon for this page" role="presentation">
-                        <?php endif; ?>
-                        <h1><?php the_field("banner_text", get_option('page_for_posts')); ?></h1>
-
-                        <?php if( get_theme_mod('kromers_phone') ): ?>
-                            <p>Speak to a qualified advisor.<br />
-                            Call <a href="tel:<?php echo get_theme_mod( 'kromers_phone' ); ?>"><?php echo get_theme_mod( 'kromers_phone' ); ?></a></p>
-
-                            <?php if ($page_link != get_the_id()): ?>
-                                <a href="<?php echo get_permalink($page_link); ?>" class="btn btn-primary">Request a consultation</a>
-                            <?php endif; ?>
-
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <div class="banner-image"  style="background-image: url(<?php echo get_the_post_thumbnail_url(get_option('page_for_posts'), 'full'); ?>);"></div>
+    <div class="container">
+        <?php if ($hero_image): ?>
+            <div class="hero">
+                <img src="<?php echo $hero_image['url']; ?>" alt="<?php echo $hero_image['alt'] ?>" />
             </div>
         <?php endif; ?>
+        <section class="contents">
+            <h1><?php echo get_post_field( 'post_title', $page_for_posts_id); ?></h1>
 
-        <section class="contents blog-container">
-            <div class="blog-contents">
-                <h1><?php _e( 'Latest Posts', 'mortgatestudio' ); ?></h1>
+            <?php  echo get_post_field( 'post_content', $page_for_posts_id); ?>
 
+            <?php edit_post_link( __( 'Edit', 'kromers' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer><!-- .entry-footer -->' ); ?>
+
+            <div class="posts-nav">
+                <div class="collapse" id="filters">
+                    <ul>
+                        <li class="key"><strong>Filter by:</strong></li>
+                        <li><a class='filter-button' data-filter="all">All</a></li>
+                        <?php
+                            $terms = get_terms( $tax, array(
+                                'hide_empty' => true,
+                            ));
+                            if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+                                foreach ( $terms as $term ) {
+                                    $classSelected = "";
+                                    if ($term->slug !== "uncategorised"):
+                                        echo "<li class=' ".$classSelected."'><a href='javascript:void(0)' class='filter-button' data-filter='.".$term->slug."'>" . $term->name . "</a></li>";
+                                    endif;
+                                }
+                            }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="posts-grid mixer">
                 <?php get_template_part('loop'); ?>
+            </div>
 
-                <?php get_template_part('pagination'); ?>
-            </div>
-            <div class="blog-sidebar">
-                <?php dynamic_sidebar('blog-page-sidebar'); ?>
-            </div>
+            <?php get_template_part('pagination'); ?>
         </section>
-
-    </article>
-
+    </div>
 <?php get_footer(); ?>

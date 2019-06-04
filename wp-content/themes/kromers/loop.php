@@ -1,38 +1,40 @@
-<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+<div class="posts-grid">
+    <?php if (have_posts()): while (have_posts()) : the_post();
+        $tags = array();
+        $cats = get_the_category();
+        foreach ($cats as $value):
+            array_push($tags, $value->slug);
+        endforeach;
+        array_push($tags, "blog-article");
+        array_push($tags, "mix");
+        $string = implode(' ', $tags);
+    ?>
 
-	<!-- article -->
-	<article id="post-<?php the_ID(); ?>" <?php post_class('blog-article'); ?>>
+        <!-- article -->
+        <article id="post-<?php the_ID(); ?>" <?php post_class($string); ?>>
+            <!-- post thumbnail -->
+            <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
+                <div class="post-image">
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url(<?php echo the_post_thumbnail_url('full'); ?>);">
+                    </a>
+                </div>
+            <?php endif; ?>
+            <!-- /post thumbnail -->
+            <div class="post-main">
+                <!-- post title -->
+                <h2>
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                </h2>
+                <!-- /post title -->
 
-		<!-- post thumbnail -->
-		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-            <div class="post-image">
-                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                    <?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-                </a>
+                <?php kromers_excerpt('kromers_index'); // Build your custom callback length in functions.php ?>
+
+                <a href="<?php the_permalink(); ?>" class="more-link">Read more</a>
             </div>
-		<?php endif; ?>
-		<!-- /post thumbnail -->
-        <div class="post-main">
-            <!-- post title -->
-            <h2>
-                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-            </h2>
-            <!-- /post title -->
-
-            <!-- post details -->
-            <span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-            <span class="author"><?php _e( 'Published by', 'kromers' ); ?> <?php the_author_posts_link(); ?></span>
-            <!-- /post details -->
-
-            <?php kromers_excerpt('kromers_index'); // Build your custom callback length in functions.php ?>
-
-            <?php edit_post_link(); ?>
-        </div>
-	</article>
-	<!-- /article -->
-
-<?php endwhile; ?>
-
+        </article>
+        <!-- /article -->
+    <?php endwhile; ?>
+</div>
 <?php else: ?>
 
 	<!-- article -->

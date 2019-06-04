@@ -1,0 +1,136 @@
+#filters {
+    margin: 30px 0;
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+
+        li {
+            margin: 5px;
+            font-style: italic;
+        }
+
+        .key {
+            font-style: normal;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.posts-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @media (min-width: @screen-sm-min) {
+        flex-direction: row;
+        margin: 0 -2%;
+    }
+
+    & > article {
+        flex: 0 0 100%;
+        margin: 0 0 30px 0;
+        @media (min-width: @screen-sm-min) {
+            flex: 0 0 46%;
+            margin: 0 2% 30px 2%;
+        }
+
+        background: @palette-light;
+        padding: 0;
+        box-sizing: border-box;
+        color: @palette-dark;
+        font-family: @primary-font;
+
+        h2 {
+            line-height: 1.2
+        }
+
+        a {
+            color: @primary-dark;
+            text-decoration: none;
+        }
+    }
+
+    .post-image {
+        width: 100%;
+
+        a {
+            display: block;
+            height: 200px;
+            margin-bottom: 20px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    .post-main {
+        padding: 10px 20px 25px 20px;
+        text-align: center;
+    }
+}
+
+.post-contents {
+    background: white;
+    color: black;
+    margin-top: 50px;
+    border: 1px solid rgba(214, 214, 214, 0.3215686274509804);
+    z-index: 1;
+    position: relative;
+
+    .post-content {
+        padding: 30px;
+    }
+
+    .post-image {
+        width: 100%;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    h1 {
+        color: @primary-dark;
+    }
+}
+
+.related-content {
+    background: @primary;
+    position: relative;
+    margin-top: 165px;
+
+    &::before {
+        content: "";
+        margin: 0;
+        height: 130px;
+        background: @primary;
+        border-top: 20px solid @secondary;
+        display: block;
+        width: 110vw;
+        top: -85px;
+        z-index: -1;
+        position: absolute;
+        transform: translateX(-5vw) rotate(-5deg);
+        -ms-transform: translateX(-5vw) rotate(-5deg);
+        transform: translateX(-5vw) rotate(-5deg);
+    }
+
+    .post-grid {
+        position: relative;
+        z-index: 1;
+    }
+
+    h2 {
+        color: white;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}

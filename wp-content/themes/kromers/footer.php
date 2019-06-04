@@ -1,18 +1,19 @@
     </section>
 
     <footer class="site-footer">
-        <div class="footer-contents">
-            Footer?
-        </div>
+        <div class="footer-contents"></div>
         <div class="container">
-            <div class="image">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/logo-white.png" alt="Image of the Kromers logo" />
-            </div>
-            <div class="text">
-                <?php echo get_theme_mod( 'kromers_footer_text' ); ?>
-            </div>
+            <?php echo get_theme_mod( 'kromers_footer_text' ); ?>
         </div>
     </footer>
+
+    <span class="pulse">
+        <svg width="28px" height="18px" viewBox="-3 0 29 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g stroke="currentColor" stroke-width="5" stroke-linecap="round">
+                <path d="M0,0 L11,11 M22,0 L11,11"></path>
+            </g>
+        </svg>
+    </span>
 
     <?php wp_footer(); ?>
 </body>

@@ -14,7 +14,7 @@ body {
     color: @body-text-color;
     font-family: @primary-font;
     font-size: 1.6rem;
-    font-weight: 200;
+    font-weight: 300;
     line-height: 2.4rem;
     overflow-x: hidden;
     width: 100vw;
@@ -36,7 +36,11 @@ body {
         background-repeat: no-repeat;
         height: 22vw;
         background-size: contain;
-        z-index: -1;
+        z-index: 1;
+    }
+
+    &.ghost::before {
+        z-index: 2;
     }
 }
 

@@ -4,13 +4,6 @@
 
         <div class="contact-page">
             <div class="contact-details">
-                <h3>Contact numbers:</h3>
-                <ul>
-                    <li>
-                        <a href="tel:<?php echo get_theme_mod( 'kromers_phone' ); ?>"><?php echo get_theme_mod( 'kromers_phone' ); ?></a>
-                    </li>
-                </ul>
-
                 <h3>Email:</h3>
                 <ul>
                     <li>
@@ -23,7 +16,7 @@
 
             </div>
             <div class="contact-form">
-                <?php echo do_shortcode('[wpforms id="59"]'); ?>
+                <?php echo do_shortcode('[wpforms id="342"]'); ?>
             </div>
         </div>
 

@@ -7,9 +7,14 @@
         $page_tile = get_field('meta_page_title');
     endif;
 
+    if (get_field('ghost_image')):
+        $ghost_image = get_field('ghost_image');
+        $page_class = $page_class ." ghost";
+    endif;
+
     if (get_field('show_contact_form')):
         $page_show_contact_form = get_field('show_contact_form');
-        $page_class = "hide-contact-form";
+        $page_class = $page_class ." hide-contact-form";
     endif;
 ?>
 
@@ -59,5 +64,5 @@
         </div>
     </header>
 
-    <section class="content">
+    <section class="content"  style="background-image: url(<?php echo $ghost_image['url']; ?>); background-repeat: no-repeat; background-position: top center;">
         <main id="main" class="site-main" role="main">

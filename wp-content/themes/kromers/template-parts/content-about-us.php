@@ -2,17 +2,29 @@
     $hero_image = get_field('hero_image');
     $strip_image = get_field('strip_image');
     $contents = get_field('content');
+    $column_left = get_field('column_left');
+    $column_right = get_field('column_right');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("page"); ?>>
     <div class="container">
+        <?php if ($hero_image): ?>
+            <div class="hero">
+                <img src="<?php echo $hero_image['url']; ?>" alt="<?php echo $hero_image['alt'] ?>" />
+            </div>
+        <?php endif; ?>
         <section class="contents">
             <h1><?php the_title(); ?></h1>
 
+            <?php the_content(); ?>
+
             <div class="columns">
-                <?php the_content(); ?>
-                <?php //echo $contents['column_one']; ?>
-                <?php //echo $contents['column_two']; ?>
+                <div class="column">
+                    <?php echo $column_left; ?>
+                </div>
+                <div class="column">
+                    <?php echo $column_right; ?>
+                </div>
             </div>
 
             <?php edit_post_link( __( 'Edit', 'kromers' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer><!-- .entry-footer -->' ); ?>
@@ -46,9 +58,6 @@
                                     <h3><?php echo $name; ?></h3>
 
                                     <ul>
-                                        <li>
-                                            <a href="tel:<?php echo $phone; ?>">T: <?php echo $phone; ?> </a>
-                                        </li>
                                         <li>
                                             <a href="mailto:<?php echo $email; ?>">E: <?php echo $email; ?></a>
                                         </li>

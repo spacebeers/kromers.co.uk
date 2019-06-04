@@ -1,5 +1,14 @@
+<?php
+    $hero_image = get_field('hero_image');
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class("page hide-footer"); ?>>
     <div class="container">
+        <?php if ($hero_image): ?>
+            <div class="hero">
+            <img src="<?php echo $hero_image['url']; ?>" alt="<?php echo $hero_image['alt'] ?>" />
+            </div>
+        <?php endif; ?>
         <section class="contents">
             <h1><?php the_title(); ?></h1>
 
@@ -10,7 +19,7 @@
 
             <?php if( have_rows('services') ): ?>
 
-                <div class="service-list">
+                <div class="project-list services">
 
                     <?php while( have_rows('services') ): the_row();
 
@@ -20,13 +29,16 @@
                         $title = get_sub_field('title');
                         ?>
 
-                        <div class="service">
-                            <div class="service-content">
+                        <div class="project">
+                            <div class="project-content">
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
                                 <h2><?php echo $title; ?></h2>
-                                <?php echo $content; ?>
-                            </div>
-                            <div class="service-image">
-                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+
+                                <?php if ($content): ?>
+                                    <div class="hover">
+                                        <?php echo $content; ?>
+                                    </div>
+                                <?php endif;?>
                             </div>
                         </div>
 

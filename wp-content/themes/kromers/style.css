@@ -1018,6 +1018,10 @@ textarea::placeholder {
   text-decoration: none;
   cursor: pointer;
 }
+.blog .contents {
+  margin-top: 150px;
+  text-align: center;
+}
 .posts-grid {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1039,7 +1043,7 @@ textarea::placeholder {
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
-    margin: 0 -2%;
+    margin: 0 -1%;
   }
 }
 .posts-grid > article {

@@ -155,6 +155,8 @@
 
     add_action( 'init', 'create_posttype' );
 
+    
+
     // Create the Custom Excerpts callback
     function kromers_excerpt($length_callback = '', $more_callback = '') {
         global $post;

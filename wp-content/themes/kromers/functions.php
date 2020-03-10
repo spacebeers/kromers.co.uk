@@ -45,8 +45,6 @@
     }
     add_shortcode('contact_phone', 'contact_phone_shortcode');
 
-
-
 	// Theme customisers
 
 	function kromers_theme_customizer( $wp_customize ) {
@@ -134,6 +132,27 @@
 
 	add_action( 'customize_register', 'kromers_theme_customizer' );
 
+    // Sidebars
+    function kromers_widgets_init() {
+        register_sidebar( array(
+            'name' => __( 'Footer images', 'kromers' ),
+            'id' => 'footer-images',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => "</aside>",
+            'before_title' => '<div class="widget-title">',
+            'after_title' => '</div>',
+        ));
+    }
+
+    add_action( 'widgets_init', 'kromers_widgets_init' );
+
+    function meks_disable_srcset( $sources ) {
+        return false;
+    }
+
+    add_filter( 'wp_calculate_image_srcset', 'meks_disable_srcset' );
+
+
 
     // Custom post types
    function create_posttype() {
@@ -155,7 +174,7 @@
 
     add_action( 'init', 'create_posttype' );
 
-    
+
 
     // Create the Custom Excerpts callback
     function kromers_excerpt($length_callback = '', $more_callback = '') {

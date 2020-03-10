@@ -121,6 +121,29 @@
     }
 }
 
+.footer-images {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+
+    aside {
+        height: 35px;
+        margin: 8px 0 8px 0;
+
+        img {
+            height: 100% !important;
+            width: auto !important;
+            display: block !important;
+        }
+    }
+
+    aside + aside {
+        margin-left: 20px;
+    }
+}
+
 .pulse:hover {
     animation: none;
 }

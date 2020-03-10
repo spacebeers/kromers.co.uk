@@ -2,6 +2,9 @@
 
     <footer class="site-footer">
         <div class="footer-contents"></div>
+        <div class="footer-images">
+            <?php dynamic_sidebar('footer-images'); ?>
+        </div>
         <div class="container">
             <?php echo get_theme_mod( 'kromers_footer_text' ); ?>
         </div>

@@ -6,16 +6,16 @@
 
                     <!-- article -->
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                        <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-                            <div class="post-image">
-                                <?php the_post_thumbnail("full"); ?>
-                            </div>
-                        <?php endif; ?>
-
                         <div class="post-content">
                             <!-- post title -->
                             <h1><?php the_title(); ?></h1>
                             <!-- /post title -->
+
+                            <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
+                                <div class="inline-image" data-aos="fade-up-right">
+                                    <?php the_post_thumbnail("medium"); ?>
+                                </div>
+                            <?php endif; ?>
 
                             <?php the_content(); // Dynamic Content ?>
 
@@ -53,7 +53,7 @@
                         if (have_posts()) :
                             while (have_posts()) : the_post(); ?>
 
-                                <article id="post-<?php the_ID(); ?>" class="blog-article">
+                                <article id="post-<?php the_ID(); ?>" class="blog-article" data-aos="fade-up-right">
                                     <!-- post thumbnail -->
                                     <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
                                         <div class="post-image">

@@ -24,8 +24,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0"/>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css?cache-bust=1">
-    <title><?php echo $page_tile; ?></title>
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css?cache-bust=11">
 	<?php wp_head(); ?>
 </head>
 
@@ -33,7 +32,7 @@
     <header class="site-header" id="header">
         <div class="container">
             <a class="logo" href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
-                <img src='<?php echo esc_url( get_theme_mod( 'kromers_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+            <?php echo file_get_contents(get_template_directory() . '/assets/logo.svg', true); ?>
             </a>
 
             <button aria-label="Click to open menu" class="menu-button" id="nav">

@@ -10,34 +10,14 @@
 
 
 .site-footer {
-    background-color: @palette-mid;
+    margin-top: 30px;
+    background-color: @primary;
     color: @palette-lightest;
     font-weight: @weight-light;
     font-size: 1.2rem;
     line-height: 1.7;
-    margin-top: 200px;
     position: relative;
     z-index: 1;
-
-    &::before {
-        content: "";
-        background: url(./assets/background.png);
-        background-repeat: repeat-x;
-        width: 100%;
-        height: 200px;
-        display: block;
-        background-size: contain;
-        background-position: bottom;
-        position: absolute;
-        top: 100px;
-        @media (min-width: @screen-sm-min) {
-            top: 400px;
-        }
-        z-index: 1;
-        left: 0;
-        right: 0;
-        transform: translateY(-100%);
-    }
 
     a {
         color: white;
@@ -60,10 +40,6 @@
             display: block;
             width: 110vw;
             top: -65px;
-            position: absolute;
-            transform: translateX(-5vw) rotate(-5deg);
-            -ms-transform: translateX(-5vw) rotate(-5deg);
-            transform: translateX(-5vw) rotate(-5deg);
         }
     }
 
@@ -93,7 +69,7 @@
 
 .pulse {
     position: fixed;
-    right: 10vw;
+    right: 5vw;
     bottom: 40px;
     margin: 0;
     display: block;

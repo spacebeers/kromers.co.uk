@@ -1,7 +1,4 @@
 <?php
-    /**
-    * Template Name: About us Page
-    */
     get_header(); ?>
 
     <?php
@@ -9,7 +6,7 @@
         while ( have_posts() ) : the_post();
 
             // Include the page content template.
-            get_template_part( 'template-parts/content', 'about-us' );
+            get_template_part( 'template-parts/content', 'sub-page' );
 
         // End the loop.
         endwhile;

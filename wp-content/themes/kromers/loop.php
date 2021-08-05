@@ -7,15 +7,16 @@
         endforeach;
         array_push($tags, "blog-article");
         array_push($tags, "mix");
+        array_push($tags, "posts-page");
         $string = implode(' ', $tags);
     ?>
 
         <!-- article -->
-        <article id="post-<?php the_ID(); ?>" <?php post_class($string); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class($string); ?> data-aos="fade-up-right">
             <!-- post thumbnail -->
             <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
                 <div class="post-image">
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url(<?php echo the_post_thumbnail_url('full'); ?>);">
+                    <a href="<?php the_permalink(); ?>" style="background-image: url(<?php echo the_post_thumbnail_url('medium'); ?>);">
                     </a>
                 </div>
             <?php endif; ?>
@@ -23,7 +24,7 @@
             <div class="post-main">
                 <!-- post title -->
                 <h2>
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h2>
                 <!-- /post title -->
 

@@ -5,7 +5,7 @@
 		<section>
 			<div class="container">
 
-				<h1><?php _e( 'Archives', 'kromers' ); ?></h1>
+				<h1><?php _e( 'Projects', 'kromers' ); ?></h1>
 
 				<?php get_template_part('loop'); ?>
 

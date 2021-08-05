@@ -3,9 +3,16 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6, p, ul {
+    font-family: @primary-font;
     margin-top: 0;
     margin-bottom: 15px;
     font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: @primary;
+    font-family: @secondary-font;
+    font-weight: 400;
 }
 
 a {
@@ -15,10 +22,6 @@ a {
         opacity: 0.8;
         text-decoration: none;
     }
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: @primary-font;
 }
 
 h1 {
@@ -55,4 +58,12 @@ ul, ol {
         content: ">";
         margin-left: 3px;
     }
+}
+
+.text-centre {
+    text-align: center;
+}
+
+a {
+    color: @primary;
 }

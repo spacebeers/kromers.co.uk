@@ -1,22 +1,26 @@
 {
-  "name": "kromers",
+  "name": "emapplications",
   "version": "0.0.1",
   "devDependencies": {
-    "autoprefixer": "^7.1.1",
-    "clean-css": "^3.4.9",
+    "autoprefixer": "latest",
+    "clean-css": "latest",
     "cssmin": "latest",
-    "gulp": "*",
-    "gulp-concat": "^2.6.0",
-    "gulp-less": "*",
-    "gulp-minify": "0.0.11",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^7.0.0",
-    "gulp-watch-less": "^1.0.1",
-    "less": "*",
-    "uglify": "*"
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-concat": "latest",
+    "gulp-less": "latest",
+    "gulp-minify": "latest",
+    "gulp-plumber": "latest",
+    "gulp-postcss": "latest",
+    "gulp-watch": "latest",
+    "gulp-watch-less": "latest",
+    "less": "latest",
+    "modern-css-reset": "latest",
+    "uglify": "latest"
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "line-clamp": "0.0.4"
+    "list.js": "^1.5.0",
+    "shufflejs": "^5.0.1"
   }
 }

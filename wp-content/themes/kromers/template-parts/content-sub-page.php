@@ -37,55 +37,13 @@
         </section>
     </div>
 
-    <?php if( get_field('show_staff_section') ): ?>
-        <?php if( have_rows('staff') ): ?>
-            <div class="staff-section">
-                <div class="container">
-                    <h2 data-aos="fade-up-right"><?php the_field('staff_title'); ?></h2>
-
-                    <div class="staff-list">
-                        <?php while( have_rows('staff') ): the_row();
-                            // vars
-                            $image = get_sub_field('image');
-                            $description = get_sub_field('description');
-                            $name = get_sub_field('name');
-                            $phone = get_sub_field('phone_number');
-                            $email = get_sub_field('email_address');
-                            ?>
-
-                            <div class="staff" data-aos="fade-up-right">
-                                <div class="staff-top">
-                                    <div class="image">
-                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
-                                    </div>
-                                    <div class="contact">
-                                        <h3><?php echo $name; ?></h3>
-
-                                        <ul>
-                                            <li>
-                                                <a href="mailto:<?php echo $email; ?>">E: <?php echo $email; ?></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="staff-bottom">
-                                    <?php echo $description; ?>
-                                </div>
-                            </div>
-
-                        <?php endwhile; ?>
-                    </div>
-                </div>
-            </div>
-        <?php endif; ?>
-    <?php endif; ?>
-
     <?php if( have_rows('strips') ): ?>
         <div class="container">
             <?php while( have_rows('strips') ): the_row(); ?>
             <?php
                 // vars
                 $secondary_content = get_sub_field('secondary_content');
+
                 if( $secondary_content ): ?>
                     <div class="strip" data-aos="fade-up-right">
                         <div class="inner">
@@ -98,10 +56,17 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
+                    </div>
                 <?php endif; ?>
+
             <?php endwhile; ?>
         </div>
     <?php endif; ?>
 
+
+    <?php
+        if (get_field('show_contact_form')):
+            get_template_part('template-parts/contact', 'footer');
+        endif;
+    ?>
 </article>

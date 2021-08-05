@@ -1,13 +1,14 @@
+
 #filters {
     margin: 30px 0;
 
     ul {
         list-style: none;
         display: flex;
-        justify-content: center;
+        padding: 0;
 
         li {
-            margin: 5px;
+            margin: 5px 10px 5px 0;
             font-style: italic;
         }
 
@@ -16,7 +17,7 @@
         }
 
         a {
-            color: white;
+            color: @primary;
             text-decoration: none;
             cursor: pointer;
         }
@@ -24,8 +25,46 @@
 }
 
 .blog .contents {
-    margin-top: 150px;
-    text-align: center;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.post-contents {
+    color: @palette-dark;
+    margin-top: 40px;
+    z-index: 1;
+    position: relative;
+
+    .inline-image {
+        float: right;
+        margin: 0 0 20px 20px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    h1 {
+        color: @primary;
+    }
+}
+
+.related-content {
+    background: @primary;
+    position: relative;
+    padding-top: 45px;
+    margin-top: 45px;
+
+    .post-grid {
+        position: relative;
+        z-index: 1;
+    }
+
+    h2 {
+        color: white;
+        margin-bottom: 40px;
+    }
 }
 
 .posts-grid {
@@ -35,7 +74,7 @@
 
     @media (min-width: @screen-sm-min) {
         flex-direction: row;
-        margin: 0 -1%;
+        margin: 0 -2%;
     }
 
     & > article {
@@ -57,7 +96,7 @@
         }
 
         a {
-            color: @primary-dark;
+            color: @primary;
             text-decoration: none;
         }
     }
@@ -77,65 +116,5 @@
     .post-main {
         padding: 10px 20px 25px 20px;
         text-align: center;
-    }
-}
-
-.post-contents {
-    background: white;
-    color: black;
-    margin-top: 50px;
-    border: 1px solid rgba(214, 214, 214, 0.3215686274509804);
-    z-index: 1;
-    position: relative;
-
-    .post-content {
-        padding: 30px;
-    }
-
-    .post-image {
-        width: 100%;
-        height: auto;
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-    }
-
-    h1 {
-        color: @primary-dark;
-    }
-}
-
-.related-content {
-    background: @primary;
-    position: relative;
-    margin-top: 165px;
-
-    &::before {
-        content: "";
-        margin: 0;
-        height: 130px;
-        background: @primary;
-        border-top: 20px solid @secondary;
-        display: block;
-        width: 110vw;
-        top: -85px;
-        z-index: -1;
-        position: absolute;
-        transform: translateX(-5vw) rotate(-5deg);
-        -ms-transform: translateX(-5vw) rotate(-5deg);
-        transform: translateX(-5vw) rotate(-5deg);
-    }
-
-    .post-grid {
-        position: relative;
-        z-index: 1;
-    }
-
-    h2 {
-        color: white;
-        text-align: center;
-        margin-bottom: 40px;
     }
 }

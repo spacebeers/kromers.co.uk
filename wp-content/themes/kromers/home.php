@@ -1,17 +1,10 @@
 <?php
     $page_for_posts_id = get_option('page_for_posts');
-    $hero_image = get_field('hero_image', $page_for_posts_id);
-    $ghost_image = get_field('ghost_image', $page_for_posts_id);
     $tax = "category";
 ?>
 
 <?php get_header(); ?>
     <div class="container">
-        <?php if ($hero_image): ?>
-            <div class="hero">
-                <img src="<?php echo $hero_image['url']; ?>" alt="<?php echo $hero_image['alt'] ?>" />
-            </div>
-        <?php endif; ?>
         <section class="contents">
             <h1><?php echo get_post_field( 'post_title', $page_for_posts_id); ?></h1>
 
@@ -48,3 +41,4 @@
         </section>
     </div>
 <?php get_footer(); ?>
+

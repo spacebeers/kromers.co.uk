@@ -1,33 +1,22 @@
-const gulp = require("gulp")
-const minify = require("gulp-minify")
-const less = require("gulp-less")
-const concat = require("gulp-concat")
-const plumber = require("gulp-plumber")
-var watchLess = require("gulp-watch-less")
-var postcss = require('gulp-postcss')
-var autoprefixer = require('autoprefixer')
+const gulp = require('gulp');
+const gulpless = require('gulp-less');
+const gulpautoprefixer = require('gulp-autoprefixer');
+const concat = require("gulp-concat");
 
-gulp.task("watch", () => gulp.src(["less/app.less"])
-    .pipe(watchLess("less/app.less"))
-    .pipe(plumber())
-    .pipe(concat("style.css"))
-    .pipe(less())
-    .pipe(postcss([ autoprefixer({
-        browsers: ['last 2 versions', 'safari 7', 'ie 9', 'ios 8']
-    }) ]))
-    .pipe(minify())
-    .pipe(gulp.dest("./")))
+const srcfile = './less/app.less';
+ 
+gulp.task('less', function() {    
+    return gulp
+        .src(srcfile)
+        .pipe(gulpless())
+        .pipe(concat("style.css"))
+        .pipe(gulpautoprefixer())
+        .pipe(gulp.dest("./"))
+    });
 
-gulp.task("less", () => gulp.src([
-        "less/app.less"
-    ])
-    .pipe(plumber())
-    .pipe(concat("style.css"))
-    .pipe(less())
-    .pipe(postcss([ autoprefixer({
-        browsers: ['last 2 versions', 'safari 7', 'ie 9', 'ios 8']
-    }) ]))
-    .pipe(minify())
-    .pipe(gulp.dest("./")))
+gulp.task('watch', function() {
+    gulp.watch('./less/**/*.less',  gulp.parallel(['less']));  // Watch all the .less files, then run the less task
+});
 
-gulp.task("default", ["less"])
+
+gulp.task('default', gulp.parallel('watch'));

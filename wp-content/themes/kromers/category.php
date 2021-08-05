@@ -18,7 +18,7 @@
                 <!-- post thumbnail -->
                 <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
                     <div class="post-image">
-                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url(<?php echo the_post_thumbnail_url('full'); ?>);">
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url(<?php echo the_post_thumbnail_url('medium'); ?>);">
                         </a>
                     </div>
                 <?php endif; ?>

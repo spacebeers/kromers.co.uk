@@ -4,20 +4,51 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("page hide-footer"); ?>>
-    <div class="container">
-        <?php if ($hero_image): ?>
-            <div class="hero">
-                <img src="<?php echo $hero_image['url']; ?>" alt="<?php echo $hero_image['alt'] ?>" />
+    <?php if (has_post_thumbnail() ): ?>
+        <div class="jumbo" style="background-image: url(<?php echo get_the_post_thumbnail_url(null, 'full'); ?>);">
+            <div class="container">
+                <div class="jumbo-content" data-aos="fade-up-right">
+                    <h1><?php the_title(); ?></h1>
+
+                    <?php the_excerpt(); ?>
+
+                    <div class="contact-details">
+                        <div class="contact-col">
+                            <h3>Address:</h3>
+                            <?php echo get_theme_mod( 'kromers_address' ); ?>
+                        </div>
+                        <div class="contact-col">
+                            <h3>Get in touch:</h3>
+                            <ul class="contact-list">
+                                <li>
+                                    <a href="tel:<?php echo get_theme_mod( 'kromers_phone' ); ?>">
+                                        <span class="dashicons dashicons-email-alt"></span>
+                                        <?php echo get_theme_mod( 'kromers_phone' ); ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:<?php echo get_theme_mod( 'kromers_email' ); ?>">
+                                        <span class="dashicons dashicons-email-alt"></span>
+                                        <?php echo get_theme_mod( 'kromers_email' ); ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo get_theme_mod( 'kromers_twitter' ); ?>" target="_blank">
+                                        <span class="dashicons dashicons-twitter"></span>
+                                        Twitter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo get_theme_mod( 'kromers_linkedin' ); ?>" target="_blank">
+                                        <span class="dashicons dashicons-linkedin"></span>
+                                        LinkedIn
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        <?php endif; ?>
-        <section class="contents">
-            <h1><?php the_title(); ?></h1>
-
-            <?php the_content(); ?>
-
-            <?php edit_post_link( __( 'Edit', 'kromers' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer><!-- .entry-footer -->' ); ?>
-        </section>
-    </div>
-
-    <?php  get_template_part('template-parts/contact', 'footer'); ?>
+        </div>
+    <?php endif; ?>
 </article>
